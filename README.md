@@ -1,7 +1,6 @@
 # SDN Broadcast Traffic Control System
 
 ##  Problem Statement
-### 📝 Problem Statement
 Traditional network infrastructures are vulnerable to "Broadcast Storms" where redundant broadcast packets (such as ARP requests) consume excessive bandwidth and Controller CPU resources. This project implements an SDN solution to:
 1. **Detect** broadcast packets at the controller.
 2. **Limit** flooding by offloading traffic to the Data Plane.
