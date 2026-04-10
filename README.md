@@ -16,6 +16,20 @@ Traditional networks suffer from broadcast storms. This project implements an SD
 - **Flooding Control:** Selective forwarding rules are pushed to the switch after the first discovery.
 - **Performance:** Reduced Packet_In events for subsequent broadcasts from the same host.
 
-## Proof of Execution
-![Ping Results](./screenshots/ping_result.png)
-![Flow Tables](./screenshots/flow_table.png)
+## 🖼️ Proof of Execution
+
+### 1. Functional Correctness (Ping Results)
+![Ping Results](./screenshots/ping_result.jpeg)
+Proves that hosts can communicate successfully through the SDN switch.
+
+### 2. Broadcast Detection (Controller Logs)
+![Broadcast Detection](./screenshots/Broadcast_detection.jpeg)
+Shows the Ryu controller identifying the ff:ff:ff:ff:ff:ff address in real-time.
+
+### 3. Selective Forwarding (Flow Tables)
+![Flow Tables](./screenshots/flow_table.jpeg)
+Shows the Priority 10 rule installed to limit flooding to the controller.
+
+### 4. Protocol Analysis (Wireshark Capture)
+![Wireshark Capture](./screenshots/wireshark_capture.jpeg)
+Evidence of the OpenFlow 1.3 Packet_In and Flow_Mod handshake.
