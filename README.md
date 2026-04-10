@@ -21,9 +21,9 @@ Traditional network infrastructures are vulnerable to "Broadcast Storms" where r
    - Run Topology: `sudo mn --custom my_topo.py --topo myproject --controller remote`
 
 ## Expected Output
-**Controller Terminal:** Displays --- BROADCAST DETECTED --- upon the first ARP request.
-**Mininet Terminal:** h1 ping h2 shows 0% packet loss.
-**Flow Table:** A new entry with priority=10 and eth_dst=ff:ff:ff:ff:ff:ff appears after detection.
+- **Controller Terminal:** Displays --- BROADCAST DETECTED --- upon the first ARP request.
+- **Mininet Terminal:** h1 ping h2 shows 0% packet loss.
+- **Flow Table:** A new entry with priority=10 and eth_dst=ff:ff:ff:ff:ff:ff appears after detection.
 
 ##  Evaluation & Results
 - **Detection:** Controller successfully identifies ARP broadcast packets by parsing Ethernet headers.
