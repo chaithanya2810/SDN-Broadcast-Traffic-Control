@@ -1,8 +1,12 @@
 # SDN Broadcast Traffic Control System
 
 ##  Problem Statement
-Traditional networks suffer from broadcast storms. This project implements an SDN controller to detect, log, and selectively forward broadcast traffic to reduce network overhead.
-
+### 📝 Problem Statement
+Traditional network infrastructures are vulnerable to "Broadcast Storms" where redundant broadcast packets (such as ARP requests) consume excessive bandwidth and Controller CPU resources. This project implements an SDN solution to:
+1. **Detect** broadcast packets at the controller.
+2. **Limit** flooding by offloading traffic to the Data Plane.
+3. **Install** selective forwarding rules for efficient traffic management.
+   
 ##  Technical Specifications
 - **Controller:** Ryu SDN Framework (Python-based)
 - **Southbound Protocol:** OpenFlow v1.3
@@ -10,12 +14,17 @@ Traditional networks suffer from broadcast storms. This project implements an SD
 - **Switch Data Plane:** Open vSwitch (OVS)
 - **Topology:** Custom Star Topology (1 Switch, 3 Hosts)
 
-##  Setup
+##  Setup and Execution steps
 1. **Prerequisites:** Ubuntu 24.04, Mininet, Ryu.
 2. **Environment:** Python 3.12 Virtual Environment.
 3. **Execution:**
    - Run Controller: `python3 ryu/bin/ryu-manager broadcast_ctrl.py`
    - Run Topology: `sudo mn --custom my_topo.py --topo myproject --controller remote`
+
+## Expected Output
+**Controller Terminal:** Displays --- BROADCAST DETECTED --- upon the first ARP request.
+**Mininet Terminal:** h1 ping h2 shows 0% packet loss.
+**Flow Table:** A new entry with priority=10 and eth_dst=ff:ff:ff:ff:ff:ff appears after detection.
 
 ##  Evaluation & Results
 - **Detection:** Controller successfully identifies ARP broadcast packets by parsing Ethernet headers.
