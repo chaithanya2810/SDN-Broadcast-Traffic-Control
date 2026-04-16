@@ -44,6 +44,10 @@ Traditional network infrastructures are vulnerable to "Broadcast Storms" where r
 ![Flow Tables](./screenshots/flow_table.jpeg)
 *Shows the Priority 10 rule installed to limit flooding to the controller.*
 
+![Flow Tables](./screenshots/flow_table1.jpeg)
+**Performance Analysis:** This screenshot confirms that the controller successfully pushed bidirectional flow rules.
+The `n_bytes` value is exceeding **6.2 Gigabytes**; this proves that high-bandwidth traffic (iperf) is being processed entirely in the Data Plane hardware, ensuring maximum throughput and zero controller bottleneck.
+
 ### 4. Protocol Analysis (Wireshark Capture)
 ![Wireshark Capture](./screenshots/wireshark_capture.jpeg)
 *Evidence of the OpenFlow 1.3 Packet_In and Flow_Mod handshake.*
