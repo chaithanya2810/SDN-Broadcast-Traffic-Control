@@ -52,7 +52,7 @@ The `n_bytes` value is exceeding **6.2 Gigabytes**; this proves that high-bandwi
 ![Wireshark Capture](./screenshots/wireshark_capture.jpeg)
 *Evidence of the OpenFlow 1.3 Packet_In and Flow_Mod handshake.*
 
-## 📚 References
+##  References
 1. Ryu SDN Framework: https://ryu.readthedocs.io/
 2. Mininet Network Emulator: http://mininet.org/
 3. OpenFlow Switch Specification v1.3.0: https://opennetworking.org/
